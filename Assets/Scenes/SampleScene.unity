@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575240528}
   - component: {fileID: 575240529}
+  - component: {fileID: 575240530}
   m_Layer: 0
   m_Name: Player_Sprite
   m_TagString: Untagged
@@ -302,6 +303,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &575240530
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575240527}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea5263aace28cb246a312413d2950e4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &629833211
 GameObject:
   m_ObjectHideFlags: 0
@@ -140673,6 +140696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537275417}
+  - component: {fileID: 1537275418}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -140696,6 +140720,20 @@ Transform:
   - {fileID: 575240528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537275418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537275416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca46ddbd0b727849b5de04c14aa7fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Script_1.Player1.Playermoment
+  _moveSpeed: 0
+  _animator: {fileID: 575240530}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
