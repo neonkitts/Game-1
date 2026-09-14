@@ -13,5 +13,10 @@ namespace Zenject
             BindInfo.ConcreteIdentifier = id;
             return this;
         }
+
+        public void NonLaz()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace Script_1.Player1
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [SerializeField] float _moveSpeed;
+        [SerializeField] private float _moveSpeed;
         [SerializeField] private Animator _animator;
         private Vector3 _movement;
         public Vector3 Movement=>_movement;

@@ -12,7 +12,7 @@ namespace GameCore.UpgradeSystem
     public class PlayerUpgrade : MonoBehaviour
     {
         private PlayerHealth _playerHealth;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementt _playerMovementt;
         
         private FireBallWeapon _fireBallWeapon;
         private AuraWeapon _auraWeapon;
@@ -35,7 +35,7 @@ namespace GameCore.UpgradeSystem
         
         public void UpgradeRegeneration() => _playerHealth.UpgradeRegeneration();
 
-        public void UpgradeSpeed() => _playerMovement.UpgradeSpeed();
+        public void UpgradeSpeed() => _playerMovementt.UpgradeSpeed();
 
         public void UpgradeRangeExp() => RangeExp += 1f;
 
@@ -51,11 +51,11 @@ namespace GameCore.UpgradeSystem
             target.gameObject.SetActive(true);
 
         [Inject]
-        private void Construct(PlayerHealth health, PlayerMovement movement, FireBallWeapon fireball, AuraWeapon aura,
+        private void Construct(PlayerHealth health, PlayerMovementt movementt, FireBallWeapon fireball, AuraWeapon aura,
             SurikenWeapon suriken, FrostBoltWeapon frost, TrapWeapon trap, BowWeapon bow)
         {
             _playerHealth = health;
-            _playerMovement = movement;
+            _playerMovementt = movementt;
             _fireBallWeapon = fireball;
             _auraWeapon = aura;
             _surikenWeapon = suriken;

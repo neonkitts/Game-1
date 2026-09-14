@@ -13,7 +13,7 @@ namespace Enemy
         [SerializeField] private Transform _minPos, _maxPos;
         [SerializeField] private Transform _enemyContainer;
         [SerializeField] private ObjectPool _enemyPool;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementt _playerMovementt;
         private WaitForSeconds _interval;
         private GetRandomSpawnPoint _getRandomSpawn;
         private Coroutine _spawnCoroutine;
@@ -32,7 +32,7 @@ namespace Enemy
         {
             while (true)
             {
-                transform.position = _playerMovement.transform.position;
+                transform.position = _playerMovementt.transform.position;
                 GameObject enemy = _enemyPool.GetFromPool();
                 enemy.transform.SetParent(_enemyContainer);
                 enemy.transform.position = _getRandomSpawn.GetRandomPoint(_minPos, _maxPos);
@@ -40,10 +40,10 @@ namespace Enemy
             }
         }
 
-        [Inject] private void Construct(GetRandomSpawnPoint getRandomSpawnPoint, PlayerMovement playerMovement)
+        [Inject] private void Construct(GetRandomSpawnPoint getRandomSpawnPoint, PlayerMovementt playerMovementt)
         {
             _getRandomSpawn = getRandomSpawnPoint;
-            _playerMovement = playerMovement;
+            _playerMovementt = playerMovementt;
         }
     }
 }

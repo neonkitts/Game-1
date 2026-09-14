@@ -13,7 +13,7 @@ namespace Enemy
         [SerializeField] private float _freezeTimer;
         [SerializeField] private Animator _animator;
         private Vector3 _direction;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementt _playerMovementt;
         private WaitForSeconds _checkTime = new WaitForSeconds(3f);
         private WaitForSeconds _freeze;
         private Coroutine _distanceToHide;
@@ -42,7 +42,7 @@ namespace Enemy
         private void Move()
         {
             _moveSpeed = _gamePause._isStopped ? 0f : _initialSpeed;
-            _direction = (_playerMovement.transform.position - transform.position).normalized;
+            _direction = (_playerMovementt.transform.position - transform.position).normalized;
             transform.position += _direction * (_moveSpeed * Time.deltaTime);
             _animator.SetFloat("Horizontal", _direction.x);
             _animator.SetFloat("Vertical", _direction.y);
@@ -52,7 +52,7 @@ namespace Enemy
         {
             while (true)
             {
-                float distance = Vector3.Distance(transform.position, _playerMovement.transform.position);
+                float distance = Vector3.Distance(transform.position, _playerMovementt.transform.position);
                 if (distance > 20f) 
                     gameObject.SetActive(false);
                 yield return _checkTime;
@@ -66,9 +66,9 @@ namespace Enemy
             _moveSpeed = _initialSpeed;
         }
         
-       [Inject] private void Construct(PlayerMovement playerMovement, GamePause gamePause)
+       [Inject] private void Construct(PlayerMovementt playerMovementt, GamePause gamePause)
        {
-           _playerMovement = playerMovement;
+           _playerMovementt = playerMovementt;
            _gamePause = gamePause;
        }
     }

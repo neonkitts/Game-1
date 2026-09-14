@@ -13,7 +13,7 @@ namespace Player.Weapon.Bow
         [SerializeField] private ObjectPool _objectPool;
         [SerializeField] private Animator _animator;
         private WaitForSeconds _timeBetweenAttack;
-        private PlayerMovement _playerMovement;
+        private PlayerMovementt _playerMovementt;
         private Coroutine _bowCoroutine;
         private Vector3 _direction;
         private float _duration, _speed;
@@ -62,13 +62,13 @@ namespace Player.Weapon.Bow
         {
             while (true)
             {
-                if (_playerMovement.Movement != Vector3.zero) 
+                if (_playerMovementt.Movement != Vector3.zero) 
                     _animator.SetTrigger("Attack");
                 yield return _timeBetweenAttack;
             }
         }
 
-        [Inject] private void Construct(PlayerMovement playerMovement) => 
-            _playerMovement = playerMovement;
+        [Inject] private void Construct(PlayerMovementt playerMovementt) => 
+            _playerMovementt = playerMovementt;
     }
 }
