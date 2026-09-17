@@ -12,7 +12,7 @@ namespace Script_1.DI1
     
                 public override void InstallBindings()
                {
-                 Container.Bind<PlayerMovement>().FromInstance(_playerMovement).AsSingle().NonLaz();
+                 Container.Bind<PlayerMovement>().FromInstance(_playerMovement).AsSingle();
                }
     }
 }
